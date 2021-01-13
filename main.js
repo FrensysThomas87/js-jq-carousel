@@ -5,6 +5,7 @@ $(document).ready(function(){
     var currentImage = $('.images img.active');
     var currentDot = $('.nav i.active');
     var firsDot = $('.nav i.first');
+    
 
     //Recupero la prima immagine
     var firstImage = $('.images img.first');
@@ -63,9 +64,24 @@ $(document).ready(function(){
     $(activeDot).removeClass('active');
     $(this).addClass('active');
 
-    
+
+});
+
+$('.nav i').click(function(){
+  var lastImg = $('.images img.last ');
+  var firstImage = $('.images img.first ');
+  var currentImage = $('.images img.active');
+  var currentDot = $('.nav i.active');
+  if(lastImg.hasClass('active')){
+    firstImage.addClass('active');
+    currentImage.removeClass('active');
+   }else{
+    currentImage.removeClass('active').next().addClass('active');
+  }
+
+});
 
 
-  });
+
 
 });
