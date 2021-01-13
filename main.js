@@ -54,8 +54,18 @@ $(document).ready(function(){
       currentDot.removeClass('active').prev().addClass('active');
     }
 
-
-
 });
+
+  $('.nav i').click(function(){
+    var activeDot = $('.nav i.active');
+    var currentImage = $('.images img.active');
+    var img = $('.images img');
+    $(activeDot).removeClass('active');
+    $(this).addClass('active');
+
+    
+
+
+  });
 
 });
