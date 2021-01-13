@@ -1,18 +1,25 @@
 $(document).ready(function(){
 
 
-  var currentImage = 0;
 
 
 
   $('.slider-wrapper .next .fas.fa-angle-right').click(function(){
-    $('img.active').removeClass('active').next().addClass('active');
-    currentImage++;
+    var currentImage = $('.images img.active');
+    var firstImage = $('.images img.first');
+    // currentImage++;
 
 
-    if(currentImage === 4){
-      $('img.first').addClass('active');
-      currentImage = 0;
+    // if(currentImage === 4){
+    //   $('img.first').addClass('active');
+    //   currentImage = 0;
+    // }
+
+    if(currentImage.hasClass('last')){
+      firstImage.addClass('active');
+      currentImage.removeClass('active');
+    }else {
+      currentImage.removeClass('active').next().addClass('active');
     }
 
     console.log(currentImage);
