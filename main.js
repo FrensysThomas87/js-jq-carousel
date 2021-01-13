@@ -5,7 +5,7 @@ $(document).ready(function(){
     var currentImage = $('.images img.active');
     var currentDot = $('.nav i.active');
     var firsDot = $('.nav i.first');
-    
+
 
     //Recupero la prima immagine
     var firstImage = $('.images img.first');
@@ -81,7 +81,25 @@ $('.nav i').click(function(){
 
 });
 
+$(document).keydown(function(e){
+  var currentImage = $('.images img.active');
+  var currentDot = $('.nav i.active');
+  var rightPressed = e.which = 39;
+    if (rightPressed) {
+       currentImage.removeClass('active').next().addClass('active');
+       currentDot.removeClass('active').next().addClass('active');
+    }
+});
 
+// $(document).keydown(function(e){
+//   var currentImage = $('.images img.active');
+//   var currentDot = $('.nav i.active');
+//   var leftPressed = e.which = 37;
+//     if (leftPressed) {
+//        currentImage.removeClass('active').prev().addClass('active');
+//        currentDot.removeClass('active').prev().addClass('active');
+//     }
+// });
 
 
 });
